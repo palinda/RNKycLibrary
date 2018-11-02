@@ -62,3 +62,4 @@ import RNKycLibrary from 'react-native-kyc-library';
 RNKycLibrary.navigateToKYCApp(<Reference ID>, <API Token>);
 ```
   
+Please refer [Sample Project](https://github.com/palinda/RNKycLibrary-Sample)
