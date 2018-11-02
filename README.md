@@ -35,7 +35,7 @@
 ### Post Installation Steps
 
 #### Android
-1. Insert the following lines inside the dependencies block in `android/settings.gradle`:
+1. Append the following lines to `android/settings.gradle`:
   	```
       include ':kycLib-release'
       project(':kycLib-release').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-kyc-library/android/kycLib-release')
