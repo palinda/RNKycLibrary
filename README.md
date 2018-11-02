@@ -3,14 +3,13 @@
 
 ## Getting started
 
-`$ npm install react-native-kyc-library --save`
+`$ npm install --save git+https://github.com/palinda/RNKycLibrary.git`
 
 ### Mostly automatic installation
 
 `$ react-native link react-native-kyc-library`
 
 ### Manual installation
-
 
 #### iOS
 
@@ -33,21 +32,33 @@
   	```
       compile project(':react-native-kyc-library')
   	```
+### Post Installation Steps
 
-#### Windows
-[Read it! :D](https://github.com/ReactWindows/react-native)
-
-1. In Visual Studio add the `RNKycLibrary.sln` in `node_modules/react-native-kyc-library/windows/RNKycLibrary.sln` folder to their solution, reference from their app.
-2. Open up your `MainPage.cs` app
-  - Add `using Kyc.Library.RNKycLibrary;` to the usings at the top of the file
-  - Add `new RNKycLibraryPackage()` to the `List<IReactPackage>` returned by the `Packages` method
-
+#### Android
+1. Insert the following lines inside the dependencies block in `android/settings.gradle`:
+  	```
+      include ':kycLib-release'
+      project(':kycLib-release').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-kyc-library/android/kycLib-release')
+  	```
+2. Add Java 1.8 compile options to `android/app/build.gradle`
+  ```
+   compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+  ```
+3. Exclude already imported dependancies. Eg: 
+  ```
+  compile (project(':react-native-kyc-library')) {
+        exclude group: 'com.android.support', module: 'support-v4'
+        exclude group: 'org.apache.commons', module: 'commons-compress'
+    }
+  ```
 
 ## Usage
 ```javascript
 import RNKycLibrary from 'react-native-kyc-library';
 
-// TODO: What to do with the module?
-RNKycLibrary;
+RNKycLibrary.navigateToKYCApp(<Reference ID>, <API Token>);
 ```
   
