@@ -27,6 +27,8 @@ public class RNKycLibraryModule extends ReactContextBaseJavaModule {
   void navigateToKYCApp(String referenceID, String apiToken) {
     ReactApplicationContext context = getReactApplicationContext();
     Intent intent = new Intent(context, KycVerifyActivity.class);
+    intent.putExtra("referenceID", referenceID);
+    intent.putExtra("apiToken", apiToken);
     context.startActivity(intent);
   }
 }
