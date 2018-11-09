@@ -3,7 +3,7 @@
 
 ## Getting started
 
-`$ npm install --save git+https://github.com/palinda/RNKycLibrary.git`
+`$ npm i react-native-kyc-library
 
 ### Mostly automatic installation
 
