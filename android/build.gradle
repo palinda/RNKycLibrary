@@ -40,7 +40,9 @@ dependencies {
     implementation 'com.facebook.react:react-native:+'
     ['boofcv-android', 'boofcv-core'].each {
         String a ->
-            implementation group: 'org.boofcv', name: a, version: '0.30'
+            compile (group: 'org.boofcv', name: a, version: '0.30'){
+                exclude group: 'org.apache.commons', module: 'commons-compress'
+            }
     }
 //    implementation group: 'org.boofcv', name: 'feature', version: '0.26'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
