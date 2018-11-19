@@ -3,7 +3,7 @@
 
 ## Getting started
 
-`$ npm install --save react-native-kyc-library
+`$ npm install --save react-native-kyc-library`
 
 ### Mostly automatic installation
 
